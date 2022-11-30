@@ -1,6 +1,7 @@
 package com.carteirainvestimentos.carteira.carteiras;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,12 +16,12 @@ public class CarteirasController {
     private static final String PAGINA_CARTEIRAS = "/carteira/carteiras";
     private static final String PAGINA_CAD_CARTEIRA = "/carteira/cadastro-carteira";
 
-    @RequestMapping
+    @GetMapping
     public String carteiras(){
         return PAGINA_CARTEIRAS;
     }
 
-    @RequestMapping("/cadastro")
+    @GetMapping("/cadastro")
     public String cadCarteiras(){
         return PAGINA_CAD_CARTEIRA;
     }
