@@ -12,10 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/carteiras")
 public class CarteirasController {
 
+    private static final String PAGINA_CARTEIRAS = "/carteira/carteiras";
+    private static final String PAGINA_CAD_CARTEIRA = "/carteira/cadastro-carteira";
 
     @RequestMapping
     public String carteiras(){
-        return "/carteira/carteiras";
+        return PAGINA_CARTEIRAS;
+    }
+
+    @RequestMapping("/cadastro")
+    public String cadCarteiras(){
+        return PAGINA_CAD_CARTEIRA;
     }
 
 }
