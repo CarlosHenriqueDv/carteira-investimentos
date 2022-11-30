@@ -1,4 +1,4 @@
-package com.carteirainvestimentos.carteira.ativos;
+package com.carteirainvestimentos.carteira.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
