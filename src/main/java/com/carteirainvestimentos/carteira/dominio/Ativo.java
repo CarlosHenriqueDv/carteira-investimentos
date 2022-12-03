@@ -1,11 +1,17 @@
 package com.carteirainvestimentos.carteira.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.List;
+
 /**
  * carteira-investimentos
  *
  * @author cshen on 30/11/2022.
  */
-public class Ativo {
+@Entity
+@Table
+public class Ativo extends AbstractEntity<Long>{
 
     private String nome;
     private String codigo;

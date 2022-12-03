@@ -1,8 +1,17 @@
 package com.carteirainvestimentos.carteira.controller;
 
+import com.carteirainvestimentos.carteira.dominio.Ativo;
+import com.carteirainvestimentos.carteira.dominio.TipoAtivo;
+import com.carteirainvestimentos.carteira.servico.AtivoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * carteira-investimentos
@@ -16,10 +25,13 @@ public class AtivosController {
     private static final String PAGINA_CADASTRO_ATIVOS = "/ativos/cadastro-ativos";
     private static final String PAGINA_LISTAR_ATIVOS = "/ativos/listar-ativos";
 
+    @Resource
+    private AtivoService ativoService;
+
 
 
     @GetMapping("/cadastro")
-    public String cadastroAtivos(){
+    public String cadastroAtivos(Ativo ativo){
         return PAGINA_CADASTRO_ATIVOS;
     }
 
@@ -27,6 +39,19 @@ public class AtivosController {
     public String listarAtivos(){
         return PAGINA_LISTAR_ATIVOS;
     }
+
+    @PostMapping("/salvar")
+    public String salvar(Ativo ativo){
+        ativoService.salvar(ativo);
+        return "redirect:/ativos/cadastro";
+    }
+
+
+    @ModelAttribute("tiposAtivos")
+    public List<TipoAtivo> listaAtivos(){
+        return Arrays.asList(TipoAtivo.values());
+    }
+
 
 
 
