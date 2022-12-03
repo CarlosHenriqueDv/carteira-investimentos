@@ -1,8 +1,9 @@
 package com.carteirainvestimentos.carteira.dominio;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
 
 /**
  * carteira-investimentos
@@ -13,8 +14,15 @@ import java.util.List;
 @Table
 public class Ativo extends AbstractEntity<Long>{
 
+    @Column(length = 150, nullable = false)
+    @NotBlank(message = "Informe o nome do ativo")
     private String nome;
+
+    @Column(unique = true, nullable = false, length = 100)
+    @NotBlank(message = "Informe o código do ativo")
     private String codigo;
+
+    @Column(nullable = false)
     private TipoAtivo tipoAtivo;
 
     public Ativo(String nome, String codigo, TipoAtivo tipoAtivo) {

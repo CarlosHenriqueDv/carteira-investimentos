@@ -5,6 +5,7 @@ import com.carteirainvestimentos.carteira.dominio.TipoAtivo;
 import com.carteirainvestimentos.carteira.servico.AtivoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,8 +45,11 @@ public class AtivosController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(Ativo ativo, RedirectAttributes redirectAttributes){
+    public String salvar(@Valid Ativo ativo, BindingResult bind, RedirectAttributes redirectAttributes){
 
+        if (bind.hasErrors()){
+            return PAGINA_CADASTRO_ATIVOS;
+        }
         ativoService.salvar(ativo);
         if (ativo.getId() != null){
             redirectAttributes.addFlashAttribute("sucesso", "Cadastro realizado com sucesso!");
