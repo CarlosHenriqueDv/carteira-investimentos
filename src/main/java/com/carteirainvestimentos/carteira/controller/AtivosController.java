@@ -4,10 +4,12 @@ import com.carteirainvestimentos.carteira.dominio.Ativo;
 import com.carteirainvestimentos.carteira.dominio.TipoAtivo;
 import com.carteirainvestimentos.carteira.servico.AtivoService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -41,14 +43,18 @@ public class AtivosController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(Ativo ativo){
+    public String salvar(Ativo ativo, RedirectAttributes redirectAttributes){
+
         ativoService.salvar(ativo);
+        if (ativo.getId() != null){
+            redirectAttributes.addFlashAttribute("sucesso", "Cadastro realizado com sucesso!");
+        }
         return "redirect:/ativos/cadastro";
     }
 
 
     @ModelAttribute("tiposAtivos")
-    public List<TipoAtivo> listaAtivos(){
+    public List<TipoAtivo> listaTiposAtivos(){
         return Arrays.asList(TipoAtivo.values());
     }
 

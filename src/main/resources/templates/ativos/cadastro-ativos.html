@@ -10,6 +10,7 @@
     <div class="col py-3" layout:fragment="corpo">
         <h1 class="h1">Cadastro de Ativos</h1>
 
+        <div th:replace="/fragments/alert"></div>
         <!--/*@thymesVar id="ativo" type="com.carteirainvestimentos.carteira.dominio.Ativo"*/-->
         <form th:action="@{/ativos/salvar}" th:object="${ativo}" method="POST">
             <div class="form-group row">
