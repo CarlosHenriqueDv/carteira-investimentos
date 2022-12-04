@@ -6,10 +6,7 @@ import com.carteirainvestimentos.carteira.servico.AtivoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -28,6 +25,7 @@ public class AtivosController {
 
     private static final String PAGINA_CADASTRO_ATIVOS = "/ativos/cadastro-ativos";
     private static final String PAGINA_LISTAR_ATIVOS = "/ativos/listar-ativos";
+    private static final String REDIRECT_CADASTRO_ATIVOS = "redirect:/ativos/cadastro";
 
     @Resource
     private AtivoService ativoService;
@@ -40,7 +38,10 @@ public class AtivosController {
     }
 
     @GetMapping("/listar")
-    public String listarAtivos(){
+    public String listarAtivos(ModelMap model){
+
+        model.addAttribute("ativos", ativoService.findAll());
+
         return PAGINA_LISTAR_ATIVOS;
     }
 
@@ -54,13 +55,31 @@ public class AtivosController {
         if (ativo.getId() != null){
             redirectAttributes.addFlashAttribute("sucesso", "Cadastro realizado com sucesso!");
         }
-        return "redirect:/ativos/cadastro";
+        return REDIRECT_CADASTRO_ATIVOS;
     }
 
+    @GetMapping("/editar/{id}")
+    public String preEditar(@PathVariable("id") Long id, ModelMap modelMap){
+        modelMap.addAttribute("ativo", ativoService.findById(id));
+        return PAGINA_CADASTRO_ATIVOS;
+    }
+
+    @PostMapping("/editar")
+    public String editar(Ativo ativo){
+        ativoService.editar(ativo);
+        return REDIRECT_CADASTRO_ATIVOS;
+    }
 
     @ModelAttribute("tiposAtivos")
     public List<TipoAtivo> listaTiposAtivos(){
         return Arrays.asList(TipoAtivo.values());
+    }
+
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable("id") Long id, RedirectAttributes redirectAttributes){
+        ativoService.excluirAtivoById(id);
+        redirectAttributes.addFlashAttribute("sucesso", "Ativo excluído com sucesso!");
+        return "redirect:/ativos/listar";
     }
 
 

@@ -3,6 +3,9 @@ package com.carteirainvestimentos.carteira.servico;
 import com.carteirainvestimentos.carteira.dominio.Ativo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  * carteira-investimentos
  *
@@ -17,5 +20,9 @@ public interface AtivoService {
 
     void excluir(Ativo ativo);
 
+    List<Ativo> findAll();
 
+    Ativo findById(Long id);
+
+    void excluirAtivoById(Long id);
 }

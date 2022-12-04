@@ -12,7 +12,7 @@
 
         <div th:replace="/fragments/alert"></div>
         <!--/*@thymesVar id="ativo" type="com.carteirainvestimentos.carteira.dominio.Ativo"*/-->
-        <form th:action="@{/ativos/salvar}" th:object="${ativo}" method="POST">
+        <form th:action="${ativo.id} == null ? @{/ativos/salvar} : @{/ativos/editar}" th:object="${ativo}" method="POST">
             <div class="form-group row">
                 <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
                 <div class="col-sm-6">
@@ -48,6 +48,7 @@
 
             <div class="form-group row">
                 <div class="col-sm-10">
+                    <input type="hidden" id="id" th:field="*{id}"/>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
