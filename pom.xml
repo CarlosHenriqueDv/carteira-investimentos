@@ -7,14 +7,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.0.1</version>
     </parent>
 
     <groupId>com.carteira-investimentos</groupId>
     <artifactId>carteira-investimentos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>carteira</name>
+    <name>carteira-investimentos</name>
 
     <description>Projeto carteira de investimentos</description>
     <properties>
@@ -107,6 +106,7 @@
 
     <modules>
         <module>app-carteira</module>
+        <module>api-externa</module>
     </modules>
 
 </project>
