@@ -47,7 +47,7 @@ public class CarteirasController {
     }
 
 
-    @GetMapping("/ativos")
+    @GetMapping("/ativos/{idCarteira}")
     public String carteiraAtivos(@PathVariable("idCarteira") Long idCarteira){
         Carteira carteira = carteiraService.findById(idCarteira);
 
