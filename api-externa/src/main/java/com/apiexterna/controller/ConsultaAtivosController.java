@@ -30,7 +30,7 @@ public class ConsultaAtivosController {
 
 
     @GetMapping(value = "/cota/{ativos}")
-    public ResponseEntity<?> atualizarCotacoesPorAtivo(@PathVariable("ativos") String ativos) {
+    public ResponseEntity<?> getCotacoes(@PathVariable("ativos") String ativos) {
 
         try {
             if (StringUtils.isBlank(ativos) || StringUtils.isNumeric(ativos)) {
