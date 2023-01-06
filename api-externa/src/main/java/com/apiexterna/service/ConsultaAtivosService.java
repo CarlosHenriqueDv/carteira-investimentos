@@ -12,4 +12,6 @@ import reactor.core.publisher.Mono;
 public interface ConsultaAtivosService {
 
     Mono<?> getCotacoes(String ativos);
+
+    Mono<?> getCotacoes(String ativos, String range, String interval);
 }

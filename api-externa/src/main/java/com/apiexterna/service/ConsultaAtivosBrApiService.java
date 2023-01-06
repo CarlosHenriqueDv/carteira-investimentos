@@ -32,4 +32,16 @@ public class ConsultaAtivosBrApiService implements ConsultaAtivosService {
 
 
     }
+
+    @Override
+    public Mono<?> getCotacoes(String ativos, String range, String interval) {
+        String URI = "api/quote/" + ativos + "?range=" + range + "&interval=" + interval +
+                "&fundamental=true";
+
+        return webClientBrApi.get()
+                .uri(URI)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(Results.class);
+    }
 }
