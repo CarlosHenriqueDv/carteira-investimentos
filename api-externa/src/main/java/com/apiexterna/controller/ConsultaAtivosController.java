@@ -5,6 +5,7 @@ import com.apiexterna.service.ConsultaAtivosService;
 import io.netty.util.internal.StringUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -26,7 +27,7 @@ public class ConsultaAtivosController {
     private ConsultaAtivosService serviceConsulta;
 
 
-    @GetMapping(value = "/cotacoes/{ativos}")
+    @GetMapping(value = "/cotacoes/{ativos}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getCotacoes(@PathVariable("ativos") String ativos,
                                          @RequestParam(defaultValue = "1d") String range,
                                          @RequestParam(defaultValue = "1d") String interval) {

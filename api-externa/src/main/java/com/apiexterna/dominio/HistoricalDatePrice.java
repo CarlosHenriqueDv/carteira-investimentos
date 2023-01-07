@@ -1,7 +1,11 @@
 package com.apiexterna.dominio;
 
+import com.apiexterna.config.LongToLocalDateTimeConverter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * carteira-investimentos
@@ -10,18 +14,19 @@ import java.util.Date;
  */
 public class HistoricalDatePrice {
 
-    private Date date;
+    @JsonDeserialize(converter = LongToLocalDateTimeConverter.class)
+    private LocalDateTime date;
     private BigDecimal open;
     private BigDecimal high;
     private BigDecimal low;
     private BigDecimal close;
     private BigDecimal volume;
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
