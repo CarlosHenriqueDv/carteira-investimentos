@@ -20,9 +20,9 @@ import javax.annotation.Resource;
 @RequestMapping("/carteiras")
 public class CarteirasController {
 
-    private static final String PAGINA_CARTEIRAS = "/com/carteira/carteiras";
-    private static final String PAGINA_CAD_CARTEIRA = "/com/carteira/cadastro-carteira";
-    private static final String PAGINA_CARTEIRA_ATIVOS = "/com/carteira/carteira-ativos";
+    private static final String PAGINA_CARTEIRAS = "/carteira/carteiras";
+    private static final String PAGINA_CAD_CARTEIRA = "/carteira/cadastro-carteira";
+    private static final String PAGINA_CARTEIRA_ATIVOS = "/carteira/carteira-ativos";
     private static final String REDIRECT_CAD_CARTEIRA = "redirect:/carteiras/cadastro";
 
     @Resource
