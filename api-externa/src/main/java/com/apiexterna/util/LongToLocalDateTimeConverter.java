@@ -1,4 +1,4 @@
-package com.apiexterna.config;
+package com.apiexterna.util;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
 

@@ -1,8 +1,7 @@
 package com.apiexterna.dominio;
 
-import com.apiexterna.config.LongToLocalDateTimeConverter;
+import com.apiexterna.util.LongToLocalDateTimeConverter;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
