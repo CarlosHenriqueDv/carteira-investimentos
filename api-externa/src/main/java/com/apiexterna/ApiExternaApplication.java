@@ -17,6 +17,9 @@ public class ApiExternaApplication {
     @Bean
     public WebClient webClient(WebClient.Builder builder){
         return builder.baseUrl(BASE_URI_BRAPI)
+                .codecs(configure -> configure
+                        .defaultCodecs()
+                        .maxInMemorySize(16 * 1024 * 1024))
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }

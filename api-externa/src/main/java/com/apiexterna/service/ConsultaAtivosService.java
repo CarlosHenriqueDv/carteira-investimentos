@@ -1,5 +1,6 @@
 package com.apiexterna.service;
 
+import com.apiexterna.dominio.Root;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -14,4 +15,6 @@ public interface ConsultaAtivosService {
     Mono<?> getCotacoes(String ativos);
 
     Mono<?> getCotacoes(String ativos, String range, String interval);
+
+    Root getTodosAtivos();
 }

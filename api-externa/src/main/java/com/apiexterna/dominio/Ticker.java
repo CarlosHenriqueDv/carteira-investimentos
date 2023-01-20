@@ -26,6 +26,8 @@ public class Ticker {
 
     private List<HistoricalDatePrice> historicalDataPrice;
 
+    private String sector;
+
 
     public String getSymbol() {
         return symbol;
