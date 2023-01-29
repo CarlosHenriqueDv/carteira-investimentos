@@ -1,4 +1,4 @@
-package com.apiexterna.dominio;
+package com.carteira.dominio;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 

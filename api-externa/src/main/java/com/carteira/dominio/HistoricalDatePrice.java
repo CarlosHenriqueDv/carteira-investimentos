@@ -1,6 +1,6 @@
-package com.apiexterna.dominio;
+package com.carteira.dominio;
 
-import com.apiexterna.util.LongToLocalDateTimeConverter;
+import com.carteira.util.LongToLocalDateTimeConverter;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.math.BigDecimal;

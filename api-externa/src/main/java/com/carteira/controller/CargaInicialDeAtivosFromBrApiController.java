@@ -1,14 +1,15 @@
-package com.apiexterna.controller;
+package com.carteira.controller;
 
-import com.apiexterna.dominio.Root;
-import com.apiexterna.service.CargaInicialService;
-import com.apiexterna.service.ConsultaAtivosService;
+
+
+import com.carteira.dominio.Root;
+import com.carteira.service.CargaInicialService;
+import com.carteira.service.ConsultaAtivosService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

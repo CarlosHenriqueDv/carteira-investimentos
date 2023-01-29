@@ -1,9 +1,7 @@
-package com.apiexterna.dominio;
+package com.carteira.dominio;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**

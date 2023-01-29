@@ -1,17 +1,14 @@
-package com.apiexterna.service;
+package com.carteira.service;
 
-import com.apiexterna.dominio.Results;
-import com.apiexterna.dominio.Root;
-import com.apiexterna.dominio.Ticker;
+
+import com.carteira.dominio.Results;
+import com.carteira.dominio.Root;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * carteira-investimentos

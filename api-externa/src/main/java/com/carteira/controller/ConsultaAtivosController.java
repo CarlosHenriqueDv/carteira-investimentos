@@ -1,14 +1,11 @@
-package com.apiexterna.controller;
+package com.carteira.controller;
 
-import com.apiexterna.error.BadRequestException;
-import com.apiexterna.service.ConsultaAtivosService;
-import io.netty.util.internal.StringUtil;
+import com.carteira.service.ConsultaAtivosService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package com.apiexterna.dominio;
+package com.carteira.dominio;
 
 import java.math.BigDecimal;
 

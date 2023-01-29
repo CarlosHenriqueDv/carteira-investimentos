@@ -1,4 +1,4 @@
-package com.apiexterna.util;
+package com.carteira.util;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
 

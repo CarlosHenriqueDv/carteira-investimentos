@@ -1,4 +1,4 @@
-package com.apiexterna.service;
+package com.carteira.service;
 
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
  * @author cshen on 11/01/2023.
  */
 @Service
-public interface CargaInicialService {
+public class CargaInicialFromBrApiService implements CargaInicialService {
+
+
 
 
 }
