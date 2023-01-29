@@ -9,6 +9,9 @@ import java.util.List;
  */
 public class Root {
 
-    public List<Stock> stocks;
+    private List<Stock> stocks;
 
+    public List<Stock> getStocks() {
+        return stocks;
+    }
 }

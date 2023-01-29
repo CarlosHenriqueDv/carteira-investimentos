@@ -9,14 +9,14 @@ import java.math.BigDecimal;
  */
 public class Stock {
 
-    public String stock;
-    public String name;
-    public BigDecimal close;
-    public BigDecimal change;
-    public BigDecimal volume;
-    public String marketCap;
-    public String logo;
-    public String sector;
+    private String stock;
+    private String name;
+    private BigDecimal close;
+    private BigDecimal change;
+    private BigDecimal volume;
+    private String marketCap;
+    private String logo;
+    private String sector;
 
     public String getStock() {
         return stock;
