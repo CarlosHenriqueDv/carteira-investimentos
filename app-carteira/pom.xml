@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.carteira-investimentos</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>api-externa</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
